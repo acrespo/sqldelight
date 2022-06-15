@@ -80,7 +80,7 @@ test {
   }
 }
 
-if (System.getenv("CI") == "true") {
+//if (System.getenv("CI") == "true") {
   apply plugin: 'com.github.johnrengelman.shadow'
 
   configurations.compileOnly.extendsFrom(configurations.shade)
@@ -118,8 +118,8 @@ if (System.getenv("CI") == "true") {
     archives(shadowJar)
   }
 
-} else {
-  configurations.implementation.extendsFrom(configurations.shade)
-}
+//} else {
+//  configurations.implementation.extendsFrom(configurations.shade)
+//}
 
 apply from: "$rootDir/gradle/gradle-mvn-push.gradle"
